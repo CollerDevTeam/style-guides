@@ -1,7 +1,5 @@
 # AngularJS Style Guide
 
-*Opinionated AngularJS style guide, adapted from a similar guide by [@john_papa](//github.com/johnpapa)*
-
 ## Table of Contents
 
   1. [Single Responsibility](#single-responsibility)
