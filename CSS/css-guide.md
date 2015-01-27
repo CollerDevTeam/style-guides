@@ -34,22 +34,6 @@ Recommended:
   color: #e5e5e5;
   ```
 
-### Use lowercase
-
-All code should be lowercase: This applies to CSS selectors, properties, and property values (with the exception of strings).
-
-*Why?*: Why?: Lowercase is a commonly used standard for attributes, and helps to create consistency throughout the code. 
-
-Not Recommended:
-  ```css
-  color: #E5E5E5;
-  ```
-  
-Recommended:
-  ```css
-  color: #e5e5e5;
-  ```
-
 ### Remove trailing white spaces.
 
 Never add trailing white space.
