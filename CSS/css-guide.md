@@ -18,11 +18,12 @@ Recommended:
   }
   ```
 
+
 ### Use only lowercase
 
 All code should be lowercase: This applies to CSS selectors, properties, and property values (with the exception of strings).
 
-*Why?*: Why?: Lowercase is a commonly used standard for attributes, and helps to create consistency throughout the code. 
+*Why?*: Lowercase is a commonly used standard for attributes, and helps to create consistency throughout the code. 
 
 Not Recommended:
   ```css
@@ -34,7 +35,8 @@ Recommended:
   color: #e5e5e5;
   ```
 
-### Remove trailing white spaces.
+
+### Remove trailing white spaces
 
 Never add trailing white space.
 
@@ -50,18 +52,27 @@ Recommended:
   color: #e5e5e5;
   ```
   
-### Do not specify the encoding
 
-Style sheets assume the use of UTF-8.
+### Encoding
+
+Do not specify the encoding - style sheets assume the use of UTF-8.
+
+*Why?*: Omitting the encoding reduces the potential to set it incorrectly.
+
 
 ### Explain code as needed, where possible
 
 Use comments to explain code: What does it cover, what purpose does it serve, why is respective solution used or preferred?
 This item is optional as it is not deemed a realistic expectation to always demand fully documented code. Mileage may vary heavily for HTML and CSS code and depends on the project’s complexity.
 
+*Why?*: Comments can greatly help other maintainers of the code understand the intent and function.
+
+
 ### Mark todos and action items with TODO
 
 Highlight todos by using the keyword TODO only, not other common formats like @@.
+
+*Why?*: Using a consistant format for todo comments makes them easy to find.
 
   ```css
   /* TODO: example comment */
@@ -69,12 +80,13 @@ Highlight todos by using the keyword TODO only, not other common formats like @@
   }
   ```
 
-### Use meaningful or generic ID and class names.
+### Use meaningful or generic ID and class names
 
-Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic.
-Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.
-Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as “helpers.”
-Using functional or generic names reduces the probability of unnecessary document or template changes.
+Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic. Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.
+
+Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as “helpers.” 
+
+*Why?*: Using functional or generic names reduces the probability of unnecessary document or template changes.
 
 Not Recommended (presentational):
   ```css
@@ -94,10 +106,10 @@ Recommended (generic):
   .alt {}
   ```
 
-### ID and Class Name Style.
 
-Use ID and class names that are as short as possible but as long as necessary.
-Try to convey what an ID or class is about while being as brief as possible.
+### ID and Class Name Style
+
+Use ID and class names that are as short as possible but as long as necessary. Try to convey what an ID or class is about while being as brief as possible.
 
 *Why?*: Using ID and class names this way contributes to acceptable levels of understandability and code efficiency.
 
@@ -112,6 +124,7 @@ Recommended:
   #nav {}
   .author {}
   ```
+
 
 ### Avoid qualifying ID and class names with type selectors
 
@@ -131,11 +144,12 @@ Recommended:
   .error {}
   ```
 
+
 ### Use shorthand properties where possible
 
 CSS offers a variety of shorthand properties (like font) that should be used whenever possible, even in cases where only one value is explicitly set.
 
-*Why?*: Using shorthand properties is useful for code efficiency and understandability.
+*Why?*: Using shorthand properties is useful for code efficiency and understandability (through grouping).
 
 Not Recommended:
   ```css
@@ -156,9 +170,12 @@ Recommended:
   padding: 0 1em 2em;
   ```
 
+
 ### Omit unit specification after “0” values
 
 Do not use units after 0 values unless they are required.
+
+*Why?*: Units don't apply to '0', and omitting them helps with readability, and minor file size shavings.
 
 Not Recommended:
   ```css
@@ -171,6 +188,7 @@ Recommended:
   margin: 0;
   padding: 1px 0 1px 2px;
   ```
+
 
 ### Add leading “0”s to values
 
@@ -188,6 +206,7 @@ Recommended:
   font-size: 0.8em;
   ```
 
+
 ### Use short hexadecimal notation where possible
 
 For color values that permit it, use a 3 character hex notation where possible
@@ -203,12 +222,13 @@ Recommended:
   ```css
   color: #ebc;
   ```
+  
 
 ### Separate words in ID and class names by a hyphen
 
 Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens
 
-*Why?*:It improves understanding and scannability.
+*Why?*: It improves understanding and scannability.
 
 Not Recommended:
   ```css
@@ -222,9 +242,12 @@ Recommended:
   .error-status {}
   ```
 
+
 ### Avoid common CSS 'hacks'
 
-It’s tempting to address styling differences over user agent detection or special CSS filters, workarounds, and hacks. Both approaches should be considered last resort in order to achieve and maintain an efficient and manageable code base. Put another way, giving detection and hacks a free pass will hurt projects in the long run as projects tend to take the way of least resistance. That is, allowing and making it easy to use detection and hacks means using detection and hacks more frequently—and more frequently is too frequently.
+It’s tempting to address styling differences over user agent detection or special CSS filters, workarounds, and hacks. Both approaches should be considered last resort in order to achieve and maintain an efficient and manageable code base.
+
+*Why?*: Giving hacks a free pass will hurt projects in the long run as projects tend to take the way of least resistance.
 
 
 ### Alphabetize declarations
@@ -247,7 +270,9 @@ Put declarations in alphabetical order in order to achieve consistent code in a 
 
 ### Indent all block content
 
-Indent all block content, that is rules within rules as well as declarations, so to reflect hierarchy and improve understanding.
+Indent all block content, that is rules within rules as well as declarations.
+
+*Why?*: The helps to reflect hierarchy and improve understanding.
 
   ```css
   @media screen, projection {
@@ -258,9 +283,12 @@ Indent all block content, that is rules within rules as well as declarations, so
   }
   ```
 
+
 ### Use a semicolon after every declaration
 
-End every declaration with a semicolon for consistency and extensibility reasons.
+End every declaration with a semicolon.
+
+*Why?*: The helps to promote consistancy, and makes extending the code easier.
 
 Not Recommended:
   ```css
@@ -281,7 +309,9 @@ Recommended:
 
 ### Use a space after a property name’s colon
 
-Always use a single space between property and value (but no space between property and colon) for consistency reasons.
+Always use a single space between property and value (but no space between property and colon).
+
+*Why?*: The helps to promote consistancy, and makes reading (and comparing) the code easier.
 
 Not Recommended:
   ```css
@@ -301,6 +331,8 @@ Recommended:
 ### Use a space between the last selector and the declaration block
 
 Always use a single space between the last selector and the opening brace that begins the declaration block. The opening brace should be on the same line as the last selector in a given rule.
+
+*Why?*: The helps to promote consistancy, and makes reading (and comparing) the code easier.
 
 Not Recommended (missing space):
   ```css
@@ -329,6 +361,8 @@ Recommended:
 
 Always start a new line for each selector and declaration.
 
+*Why?*: It is more clear at a glance which selectors are being targeted.
+
 Not Recommended:
   ```css
   a:focus, a:active {
@@ -351,10 +385,15 @@ Recommended:
 
 Always put a blank line (two line breaks) between rules.
 
+*Why?*: The helps to promote consistancy, and makes reading (and comparing) the code easier.
+
 Not Recommended:
   ```css
   body {
-    margin: auto; width: 50%;
+    margin: auto;
+  }
+  h1 {
+    font-size: 1em;
   }
   ```
 
@@ -362,15 +401,19 @@ Recommended:
   ```css
   body {
     margin: auto;
-    width: 50%;
+  }
+  
+  h1 {
+    font-size: 1em;
   }
   ```
 
 
-### Use single quotation marks for attribute selectors and property values.
+### Use single quotation marks for attribute selectors and property values
 
-Use single ('') rather than double ("") quotation marks for attribute selectors or property values. Do not use quotation marks in URI values (url()).
-Exception: If you do need to use the @charset rule, use double quotation marks—single quotation marks are not permitted.
+Use single ('') rather than double ("") quotation marks for attribute selectors or property values. Do not use quotation marks in URI values (url()). An exception is if you do need to use the @charset rule, then use double quotation marks—single quotation marks are not permitted.
+
+*Why?*: Single quotation marks are the standard supported by CSS.
 
 Not Recommended:
   ```css
@@ -389,9 +432,11 @@ Recommended:
   ```
 
 
-### Group sections by a section comment (optional).
+### Section comments
 
 If possible, group style sheet sections together by using comments. Separate sections with two blank lines.
+
+*Why?*: This helps to visually group selectors together, and also provides a name / brief description of the related section.
 
   ```css
   /* Header */
@@ -413,3 +458,5 @@ If possible, group style sheet sections together by using comments. Separate sec
 ### Avoid the use of !important
 
 Using !important overrides all specificity no matter how high it is. We like to avoid using it for this reason. Most of the time it is not necessary. Even if you need to override a selector in a stylesheet you don't have access to, there are usually ways to override it without using !important. Avoid using it if possible.
+
+*Why?*: It breaks the intent of any other rules, and is promotes bad design.
