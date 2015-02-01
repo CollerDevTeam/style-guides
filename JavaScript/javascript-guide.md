@@ -16,6 +16,7 @@ Recommended:
   var myNewVariable = 15;
   ```
 
+
 ### Use standard casing
 
 Use camel casing (not pascal case) for identifiers such as variables and functions. The only exception to this is for constructor functions, which should always be in pascal case.
@@ -46,6 +47,7 @@ Recommended:
   }
   ```
 
+
 ### Strings
 
 Use single quotes to surround strings.
@@ -66,6 +68,7 @@ Recommended:
   var myHtml = '<input id="myDiv" />';
   ```
 
+
 ### Spaces Around Operators
 
 Always put spaces around operators ( = + / * ), and after commas.
@@ -85,7 +88,6 @@ Recommended:
   
   addNewValue(sum, 91);
   ```
-
 
 
 ### Code Indentation
@@ -186,7 +188,8 @@ Recommended:
 
 While there are several ways to attach methods and properties to an object created via "new", the preferred style for methods is by using 'Foo.prototype.bar = function () {}'. All other properties should be initialized in the constructor function where possible.
 
-Recommended:
+*Why?*: This helps to keep code consistant.
+
   ```javascript
   function Person(name, age) {
   	this.name = name;
@@ -331,7 +334,6 @@ Always use explicit scope. For example, don't rely on window being in the scope 
 
 *Why?*: Doing so increases portability and clarity.
 
-Recommended:
   ```javascript
   this.global1 = 1;
 
@@ -347,7 +349,6 @@ Make use of strict mode throughout all JavaScript, by placing ‘use strict’; 
 
 *Why?*: Strict mode helps us avoid strange behavoiurs and errors caused by the more questionable features of JavaScript.
 
-Recommended:
   ```javascript
   (function () {
   	'use strict';
@@ -418,7 +419,6 @@ Use !! to convert to boolean.
 
 *Why?*: Following this typical JavaScript convention allows for new code to have a similar style to existing code, and also to third-party code.
 
-Recommended:
   ```javascript
   var remainingTasks = ['task 1', 'task 2'];
   //other code..
@@ -485,7 +485,6 @@ Recommended:
   if (c !== d) {
   }
   ```
-
 
 
 ### One line code blocks
