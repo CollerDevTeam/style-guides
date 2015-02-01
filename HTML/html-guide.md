@@ -14,6 +14,7 @@ Recommended:
   <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
   ```
 
+
 ### Use correct document type
 
 Always declare the document type as the first line in your document.
@@ -37,12 +38,13 @@ Not Recommended:
   <A HREF="/">Home</A>
   <input autoComplete />
   ```
-  
+
 Recommended:
   ```html
   <a href="/">Home</a>
   <input autocomplete />
   ```
+  
   
 ### Quote all attribute values
 
@@ -59,6 +61,7 @@ Recommended:
   ```html
   <td colspan="3"></td>
   ```
+  
   
 ### Indent by 4 spaces at a time
 
@@ -94,6 +97,7 @@ Recommended:
   <p>What?</p>
   <p>How?</p>
   ```
+
 
 ### Specify the correct encoding
 
@@ -150,7 +154,6 @@ Use elements for what they have been created for. For example, use heading eleme
 
 *Why?*: Using proper elements shows clear intent with regards to the purpose of elements, and helps with generic styling.
 
-
 Not Recommended:
   ```html
   <div onclick="goToRecommendations();">All recommendations</div>
@@ -179,7 +182,6 @@ Recommended:
   ```html
   <img src="spreadsheet.png" alt="Spreadsheet screenshot.">
   ```
-
 
 
 ### Separate structure from presentation from behavior
@@ -244,6 +246,7 @@ Recommended:
     </body>
   </html>
   ```
+
 
 ### HTML comments
 
