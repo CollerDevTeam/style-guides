@@ -245,30 +245,33 @@ Recommended:
   </html>
   ```
 
-### Format HTML comments correctly
+### HTML comments
 
-Short comments should be written on one line, with a space after <!-- and a space before -->:
-<!-- This is a comment -->
-Long comments, spanning many lines, should be written with <!-- and --> on separate lines:
-<!-- 
-  This is a long comment example. This is a long comment example. This is a long comment example.
-  This is a long comment example. This is a long comment example. This is a long comment example.
--->
-Long comments are easier to observe, if they are indented 2 spaces.
+Format HTML lines consistently. Short comments should be written on one line. Long comments should be written with the opening and closing tags on sepatate lines, with indentation used for the text.
+
+*Why?*: Using a consistant format helps with readability of the code.
+
+*Why?*: Longer comments are easier to read when they are indented.
+
+  ```html
+  <!-- This is a short comment -->
+  
+  <!-- 
+      This is a long comment example. This is a long comment example. This is a long comment example.
+      This is a long comment example. This is a long comment example. This is a long comment example.
+  -->
+  ```
 
 
-### Do not use entity references
+### Don't use entity references
 
-There is no need to use entity references like &mdash;, &rdquo;, or &#x263a;, assuming the same encoding (UTF-8) is used for files and editors as well as among teams.
-The only exceptions apply to characters with special meaning in HTML (like < and &) as well as control or “invisible” characters (like no-break spaces).
-<!-- Not recommended -->
-The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
-<!-- Recommended -->
+There is no need to use entity references like &mdash;, &rdquo;, or &#x263a;, assuming the same encoding (UTF-8) is used for files and editors as well as among teams. The only exceptions apply to characters with special meaning in HTML (like < and &) as well as control or “invisible” characters (like no-break spaces).
 
+*Why?*: Using the actual characters makes reading the code much easier.
 
 Not Recommended:
   ```html
-  The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
+The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
   ```
   
 Recommended:
@@ -276,37 +279,13 @@ Recommended:
   The currency symbol for the Euro is “€”.
   ```
 
-### Use a new line for every block, list, or table element, and indent every such child element
-
-Independent of the styling of an element (as CSS allows elements to assume a different role per display property), put every block, list, or table element on a new line.
-Also, indent them if they are child elements of a block, list, or table element.
-(If you run into issues around whitespace between list items it’s acceptable to put all li elements in one line. A linter is encouraged to throw a warning instead of an error.)
-
-  ```html
-  <blockquote>
-    <p><em>Space</em>, the final frontier.</p>
-  </blockquote>
-  <ul>
-    <li>Moe
-    <li>Larry
-    <li>Curly
-  </ul>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Income
-        <th scope="col">Taxes
-    <tbody>
-      <tr>
-        <td>$ 5.00
-        <td>$ 4.50
-  </table>
-  ```
 
 ### Omit type attributes for style sheets and scripts
 
 Do not use type attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript).
 Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
+
+*Why?*: Removing these unnessecary attributes keeps the code much more succinct, and reduceds the potential of getting them wrong.
 
 Not Recommended:
   ```html
@@ -325,6 +304,8 @@ Recommended:
 
 You should only give elements an ID attribute if they are unique. They should be applied to that element only and nothing else. Classes can be applied to multiple elements that share the same style properties. Things that should look and work in the same way can have the same class name.
 
+*Why?*: When elements are selected by id, there is an expectation that only a single element will be found.
+
   ```html
   <ul id="categories">
     <li class="item">Category 1</li>
@@ -337,6 +318,10 @@ You should only give elements an ID attribute if they are unique. They should be
 ### When quoting attributes values, use double quotation marks
 
 Use double ("") rather than single quotation marks ('') around attribute values.
+
+*Why?*: Using double quotation marks is a common standard used in HTML.
+
+*Why?*: It is easier to include css statements in attributes, as these use single quotation marks, and therefore don't need to be escaped.
 
 Not Recommended:
   ```html
@@ -353,6 +338,8 @@ Recommended:
 
 Spaces around equal signs is legal, but space-less is easier to read, and groups entities better together.
 
+*Why?*: Pairs are much easier to identify when the spaces are omitted.
+
 Not Recommended:
   ```html
   <link rel = "stylesheet" href = "styles.css">
@@ -366,12 +353,16 @@ Recommended:
 
 ### Avoid long code lines
 
-When using an HTML editor, it is inconvenient to scroll right and left to read the HTML code. Try to avoid code lines longer than 80 characters.
+Try to avoid code lines longer than around 80 characters where appropriate.
+
+*Why?*: When using an HTML editor, it is inconvenient to scroll right and left to read the HTML code.
 
 
 ### Specify both encoding and langage
 
-To ensure proper interpretation, and correct search engine indexing, both the language and the character encoding should be defined as early as possible in a document.
+Both the language and the character encoding should be defined as early as possible in a document.
+
+*Why?*: This helps to ensure proper interpretation, and correct search engine indexing.
 
   ```html
   <!DOCTYPE html>
@@ -386,3 +377,5 @@ To ensure proper interpretation, and correct search engine indexing, both the la
 ### Explain code as needed, where possible
 
 Use comments to explain code: What does it cover, what purpose does it serve, why is respective solution used or preferred? This item is optional as it is not deemed a realistic expectation to always demand fully documented code. Mileage may vary heavily for HTML and CSS code and depends on the project’s complexity.
+
+*Why?*: Comments can greatly help other maintainers of the code understand the intent and function.
