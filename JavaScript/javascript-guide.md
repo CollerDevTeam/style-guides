@@ -330,15 +330,21 @@ Any custom toString methods must always succeed without side effects. You can co
 
 ### Explicit scope
 
-Always use explicit scope. For example, don't rely on window being in the scope chain. You might want to use your function in another application for which window is not the content window.
+Always use explicit scope. We should not rely on the window object being available. The suggested way of gaining access to global variables is to pass 'this' into the outer closure. For most environments, this will resolve to 'window'.
 
 *Why?*: Doing so increases portability and clarity.
 
+Not Recommended:
   ```javascript
-  this.global1 = 1;
+  myGlobalVar = 12;
+  window.globalVar2 = 34;
+  ```
 
+Recommended:
+  ```javascript
   (function (globals) {
-  	globals.global2 = 2;
+    globals.myGlobalVar = 12;
+    globals.globalVar2 = 34;
   }(this));
   ```
 
