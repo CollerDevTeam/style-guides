@@ -460,3 +460,16 @@ If possible, group style sheet sections together by using comments. Separate sec
 Using !important overrides all specificity no matter how high it is. We like to avoid using it for this reason. Most of the time it is not necessary. Even if you need to override a selector in a stylesheet you don't have access to, there are usually ways to override it without using !important. Avoid using it if possible.
 
 *Why?*: It breaks the intent of any other rules, and is promotes bad design.
+
+
+### Avoid using inline styles
+
+All CSS should be in a stylesheet file - we should not use inline styles in HTML. 
+
+*Why?*: Inline styles make it much harder to make broad changes, and generally indicate a wider problem in the css rules.
+
+
+Not Recommended:
+  ```css
+  <div style="height: 50px;"></div>
+  ```
